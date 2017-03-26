@@ -1,0 +1,39 @@
+﻿@using CarDealer.Models.ViewModels
+@model DetailedCustomerViewModel
+
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>About</h2>
+
+<div>
+    <h4>Customer Info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarsBought)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarsBought)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMoneySpent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMoneySpent)
+        </dd>
+
+    </dl>
+</div>

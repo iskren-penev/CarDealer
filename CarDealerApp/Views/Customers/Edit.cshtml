@@ -1,0 +1,41 @@
+﻿@using CarDealer.Models.ViewModels
+@model EditCustomerViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <form class="form-horizontal" method="post">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-sm-2">Name</label>
+            <div class="col-md-10">
+                <input class="form-control" name="Name" id="Name" type="text" value="@Model.Name" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">Birth Date</label>
+
+            <div class="col-md-10">
+                <input class="form-control" name="BirthDate" id="BirthDate" type="datetime" value="@Model.BirthDate.ToString("yyyy-MM-dd")" />
+            </div>
+        </div>
+        <input type="number" name="Id" hidden="hidden" value="@Model.Id" />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Edit" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+}
+
+

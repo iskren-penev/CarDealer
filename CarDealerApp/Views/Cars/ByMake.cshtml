@@ -1,0 +1,37 @@
+﻿@using CarDealer.Models.ViewModels
+@model IEnumerable<CarDealer.Models.ViewModels.Car.CarViewModel>
+
+@{
+    ViewBag.Title = "Cars";
+}
+
+<h2>Cars by @Model.First().Make</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TravelledDistance)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Make)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TravelledDistance)
+        </td>
+    </tr>
+}
+
+</table>
