@@ -8,20 +8,21 @@
 <h2>AllSuppliersForUser</h2>
 
 <br />
-<a href="/suppliers/add" class="btn btn-lg btn-primary">New Supplier</a>
+@Html.ActionLink("New Supplier", "Add", null, new { @class = "btn btn-lg btn-primary"})
+
 <br />
 <br />
 
 <table class="table table-striped">
     <tr>
-        <td>Name</td>
-        <td>Importer</td>
-        <td>Actions</td>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+        <th>@Html.DisplayNameFor(model => model.IsImporter)/th>
+        <th>Actions</th>
     </tr>
     @foreach (var supplier in Model)
     {
         <tr>
-            <td>@supplier.Name</td>
+            <td>@Html.DisplayFor(m => supplier.Name)</td>
             @if (supplier.IsImporter)
             {
                 <td>Yes</td>
@@ -31,8 +32,8 @@
                 <td>No</td>
             }
             <td>
-                <a href="/suppliers/edit/@supplier.Id">Edit</a>
-                <a href="/suppliers/delete/@supplier.Id">Delete</a>
+                @Html.ActionLink("Edit", "Edit", new { id = @supplier.Id}, null)
+                @Html.ActionLink("Delete", "Delete", new { id = @supplier.Id }, null)
             </td>
         </tr>
     }

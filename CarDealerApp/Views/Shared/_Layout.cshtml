@@ -26,8 +26,9 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/customers/all/ascending">All</a></li>
-                            <li><a href="/customers/add">Add</a></li>
+                            <li>@Html.ActionLink("All", "All", "Customers", new {order = "ascending"}, null)</li>
+                            <li>@Html.ActionLink("Add", "Add", "Customers")</li>
+
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -36,12 +37,25 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/sales">All</a></li>
-                            <li><a href="/sales/discounted">Discounted</a></li>
+                            <li>@Html.ActionLink("All", "All", "Sales")</li>
+                            <li>@Html.ActionLink("Discounted", "DiscountedSales", "Sales")</li>
+
                         </ul>
                     </li>
-                    <li><a href="/cars/all">Cars</a></li>
-                    <li><a href="/parts">Parts</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+                            Suppliers
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Local", "All", "Suppliers", new {type = "local"}, null)</li>
+                            <li>@Html.ActionLink("Importers", "All", "Suppliers", new { type = "importers"}, null)</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Cars", "All", "Cars")</li>
+                    <li>@Html.ActionLink("Parts", "All", "Parts")</li>
+
 
                 </ul>
             </div>
